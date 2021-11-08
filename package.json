@@ -1,0 +1,7 @@
+{
+  "name": "lyko-client-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Uriel Ofir <urielofir@gmail.com>",
+  "license": "MIT"
+}
