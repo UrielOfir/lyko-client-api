@@ -1,6 +1,6 @@
 {
   "name": "lyko-client-api-library",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.11",
   "main": "index.js",
   "author": "Uriel Ofir <urielofir@gmail.com>",
   "license": "MIT",
