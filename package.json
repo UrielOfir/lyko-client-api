@@ -1,7 +1,13 @@
 {
-  "name": "lyko-client-api",
+  "name": "lyko-client-api-library",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Uriel Ofir <urielofir@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/UrielOfir/lyko-client-api",
+  "bugs": "https://github.com/UrielOfir/lyko-client-api/issues",
+  "repository": {
+    "url": "https://github.com/UrielOfir/lyko-client-api",
+    "type": "git"
+  }
 }
