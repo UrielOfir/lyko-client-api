@@ -2,6 +2,7 @@
   "name": "lyko-client-api-library",
   "version": "1.0.1-alpha.13",
   "main": "index.js",
+  "type": "module",
   "author": "Uriel Ofir <urielofir@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/UrielOfir/lyko-client-api",

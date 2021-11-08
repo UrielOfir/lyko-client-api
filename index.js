@@ -1,1 +1,1 @@
-exports.lyko = "hello world";
+export deafult lyko = "hello world";
