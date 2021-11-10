@@ -10,5 +10,9 @@
   "repository": {
     "url": "https://github.com/UrielOfir/lyko-client-api",
     "type": "git"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "node-fetch": "^3.0.0"
   }
 }
