@@ -1,40 +1,28 @@
 import axios from 'axios';
-import fs from 'fs';
 
-const apiJSON = fs.readFileSync("./lykoApi.json", 'utf8');
-const apiObject = JSON.parse(apiJSON);
-const apiRequests = {};
+import { setAPI_Key, apiRequests } from './api-requests-constructor.js'
 
-let API_KEY;
-const setAPI_Key = (apiKey) => {
-    API_KEY = apiKey;
-}
-setAPI_Key("api_1264493262");
+//TODO: new folder only for customers funcs
 
-Object.keys(apiObject.paths).forEach(path => {
-    Object.keys(apiObject.paths[path]).forEach(method => {
-        const opeartionId = apiObject.paths[path][method].operationId;
-        apiRequests[opeartionId] = {
-            config: {
-                url: `https://api.lyko.tech${path}`,
-                method,
-                headers: { "X-Api-Key": API_KEY }
-            },
-            params: (parameters) => { return { params: { ...parameters }, ...apiRequests[opeartionId].config } }
-        };
-    })
-});
+//TODO: functions- getCustomer, uptadeCustomer, deleteCustomer
 
-
-
-const reqConfig = apiRequests.AddressController_autocomplete.params({ text: "paris" });
-
-axios(reqConfig)
-    .then(res => console.log(res.data))
-    .catch(e => console.log(e))
-
-const reqCounstruct = ({ method }) => {
-    axios[method]()
+const createCustomer = async ({ firstname, lastname, email, phone }) => {
+    const createUserReq = apiRequests.CustomerController_create;
+    createUserReq.data = { firstname, lastname, email, phone }
+    axios(createUserReq)
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(e => console.log(e))
 }
 
-export { setAPI_Key }
+const getCustomers = async () => {
+    const createUserReq = apiRequests.CustomerController_list;
+    return await axios(createUserReq)
+        .then(res => {
+            return res.data
+        })
+        .catch(e => console.log(e))
+}
+
+export { setAPI_Key, createCustomer, getCustomers }
