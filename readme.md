@@ -1,0 +1,1 @@
+In the import.js file you see example of using the library.

@@ -1,14 +1,22 @@
-import { createCustomer , getCustomers, setAPI_Key } from "./index.js";
+import { lykoApi } from "./index.js";
 
-setAPI_Key("api_1264493262");
+lykoApi.setAPI_Key("api_1264493262");
+let customerId = "0d1fbed2-d047-45eb-ab11-03244b402f04"
 
-// createCustomer({
-//     "firstname": "bibi",
-//     "lastname": "Doe",
-//     "email": "johndoe@example.com",
-//     "phone": "+33601020304"
-// })
+lykoApi.updateCustomer({
+    customerId,
+    "firstname": "13:55",
+    "lastname": "Doe",
+    "email": "johndoe@example.com",
+    "phone": "+33601020304"
+})
 
 
-    const data = await getCustomers()
-    console.log("fucnction return:", data);
+// lykoApi.deleteCustomer({ customerId: '59ba12c7-31bf-47d2-bbc1-6a7027efa1ee' });
+const data = await lykoApi.getCustomers({ customerId });
+console.log(data);
+data.forEach((customer) => {
+    console.log(customer.id, customer.deleted);
+})
+
+
