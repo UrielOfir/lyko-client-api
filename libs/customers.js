@@ -1,7 +1,5 @@
 import axios from 'axios';
-import { apiRequests } from './api-requests-constructor.js';
-
-//TODO:  uptadeCustomer
+import { apiRequests } from '../api_requests_constructor.js';
 
 const createCustomer = async ({ firstname, lastname, email, phone }) => {
     const createCustomerReq = apiRequests.CustomerController_create;
