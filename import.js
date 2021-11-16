@@ -1,6 +1,6 @@
 import { lykoApi } from "./index.js";
 
-lykoApi.setAPI_Key("api_1264493262");
+await lykoApi.setAPI_Key("api_1264493262");
 let customerId = "0d1fbed2-d047-45eb-ab11-03244b402f04"
 
 lykoApi.updateCustomer({

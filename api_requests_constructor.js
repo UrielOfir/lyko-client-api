@@ -1,4 +1,5 @@
 import fs from 'fs';
+import is_json_uptodate from './check_json_uptodate.js'
 
 const apiJSON = fs.readFileSync("./lykoApi.json", 'utf8');
 const apiObject = JSON.parse(apiJSON);
@@ -6,9 +7,13 @@ const apiObject = JSON.parse(apiJSON);
 let apiRequests = {};
 let API_KEY;
 
-const setAPI_Key = (apiKey) => {
+const setAPI_Key = async (apiKey) => {
+    if (await !is_json_uptodate()) {
+        console.log("the API's JSON changed. it might cause problems");
+    }
     API_KEY = apiKey;
-    apiRequests = apiRequestsConstructor(apiObject)
+    apiRequests = apiRequestsConstructor(apiObject);
+
 }
 
 function apiRequestsConstructor(apiObject) {

@@ -1,4 +1,4 @@
-const stringsCompare = (string1, string2) => {
+const is_strings_equal = (string1, string2) => {
     let change = "";
     const isDiff = [...string1].some((char, index) => {
         if (char !== string2.charAt(index)) {
@@ -8,10 +8,10 @@ const stringsCompare = (string1, string2) => {
         }
     })
     if (isDiff) {
-        return change;
+        return false;
     }
-    return `the strings are same`;
+    return true;
 }
 
-export default stringsCompare;
+export default is_strings_equal;
 
